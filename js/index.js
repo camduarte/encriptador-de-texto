@@ -6,7 +6,10 @@
 function mostrarSalida() {
     var caja2 = document.querySelector(".caja2");
     var contenido = "<textarea class=\"salida\" placeholder=\"Salida\" readonly=\"true\" disabled></textarea><input id=\"boton-copiar\" type=\"button\" value=\"Copiar\">";
-    caja2.innerHTML = contenido;    
+    caja2.innerHTML = contenido;
+    //Copiar en el clipboard.
+    var botonCopiar = document.getElementById("boton-copiar");
+    botonCopiar.onclick = copiar;
 }
 
 /**
@@ -35,9 +38,6 @@ function encriptar() {
     mostrarSalida();
     const salida = document.querySelector(".salida");
     salida.value = resultado;
-    //Copiar en el clipboard.
-    var botonCopiar = document.getElementById("boton-copiar");
-    botonCopiar.onclick = copiar;
 }
 
 var  botonEncriptar = document.getElementById("boton-encriptar");
@@ -69,9 +69,6 @@ botonEncriptar.onclick = encriptar;
     mostrarSalida();
     const salida = document.querySelector(".salida");
     salida.value = resultado;
-    //Copiar en el clipboard.
-    var botonCopiar = document.getElementById("boton-copiar");
-    botonCopiar.onclick = copiar;
 }
 
 var  botonDesencriptar = document.getElementById("boton-desencriptar");
