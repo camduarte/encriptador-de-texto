@@ -7,7 +7,7 @@
 function encriptar() {
     const texto = document.querySelector(".entrada").value;
 
-    //Llaves de encriptación
+    //Llaves de encriptación.
     var llaves = new Map();
     llaves.set("e","enter");
     llaves.set("i","imes");
@@ -15,13 +15,14 @@ function encriptar() {
     llaves.set("o","ober");
     llaves.set("u","ufat");
 
+    //Encripto el mensaje.
     var resultado = texto.replace(/a/g, llaves.get("a"))
     resultado = resultado.replace(/e/g, llaves.get("e"))
     resultado = resultado.replace(/i/g, llaves.get("i"))
     resultado = resultado.replace(/o/g, llaves.get("o"))
     resultado = resultado.replace(/u/g, llaves.get("u"));
 
-    // muestro el mensaje encriptado
+    //Muestro el mensaje encriptado.
     const salida = document.querySelector(".salida");
     salida.value = resultado;
 }
@@ -30,13 +31,13 @@ var  botonEncriptar = document.getElementById("boton-encriptar");
 botonEncriptar.onclick = encriptar;
 
 /**
- * Desecripta el texto.
+ * Desencripta el texto.
  * @returns El texto desencriptado.
  */
  function desencriptar() {
     const texto = document.querySelector(".entrada").value;
     
-    //Llaves de desencriptación
+    //Llaves de desencriptación.
     var llaves = new Map();
     llaves.set("enter","e");
     llaves.set("imes","i");
@@ -44,13 +45,14 @@ botonEncriptar.onclick = encriptar;
     llaves.set("ober","o");
     llaves.set("ufat","u");
 
+    //Desencripto el mensaje.
     var resultado = texto.replace(/enter/g, llaves.get("enter"))
     resultado = resultado.replace(/imes/g, llaves.get("imes"))
     resultado = resultado.replace(/ai/g, llaves.get("ai"))
     resultado = resultado.replace(/ober/g, llaves.get("ober"))
     resultado = resultado.replace(/ufat/g, llaves.get("ufat"));
 
-    // muestro el mensaje desencriptado
+    //Muestro el mensaje desencriptado.
     const salida = document.querySelector(".salida");
     salida.value = resultado;
 }
