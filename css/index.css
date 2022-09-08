@@ -125,13 +125,14 @@ main {
 }
 
 .salida {
+    background-color: #FFFFFF;
+    border-style: none;
+
     display: block;
     width: 70%;
     height: 75%;
     padding: 0.5em;
     margin: 0 auto;
-
-    border-style: none;
 
     font-family: 'Inter';
     font-style: normal;
