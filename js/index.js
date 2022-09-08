@@ -59,3 +59,14 @@ botonEncriptar.onclick = encriptar;
 
 var  botonDesencriptar = document.getElementById("boton-desencriptar");
 botonDesencriptar.onclick = desencriptar;
+
+/**
+ * Copia el texto encriptado/desencriptado en el clipboard.
+ */
+function copiar() {
+    var salida = querySelector(".salida");
+    navigator.clipboard.writeText(salida.value);
+}
+
+var botonCopiar = document.getElementById("boton-copiar");
+botonCopiar.onclick = copiar; 
