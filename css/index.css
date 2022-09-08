@@ -36,6 +36,7 @@ main {
     left: 240px;
     top: 168px;
 
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 32px;
@@ -139,7 +140,7 @@ main {
     font-weight: 400;
     font-size: 24px;
     line-height: 150%;
-    
+
     color: #495057;
 }
 
