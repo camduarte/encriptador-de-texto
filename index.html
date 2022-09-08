@@ -3,24 +3,38 @@
     <head>
         <meta charset="UTF-8">
         <title>Encriptador de texto</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/index.css">
     </head>
     <body>
         <header>
-            <h1><img src="./img/logo.png" alt="Logo de Alura."></h1>
+            <h1><img class="logo" src="./img/logo.png" alt="Logo de Alura."></h1>
         </header>
         <main>
-            <div>
-                <textarea placeholder="Ingrese el texto aqui"></textarea>
-                <img src="./img/simbolo.png"><p>Solo letras minúsculas y sin acentos</p>
-                <input type="button" value="Encriptar">
-                <input type="button" value="Desencriptar">
+            <div class="caja1">
+                <textarea class="entrada" placeholder="Ingrese el texto aqui"></textarea>
+                <img class="signo-exclamacion" src="./img/signo.png"><p class="mensaje">Solo letras minúsculas y sin acentos</p>
+                <div class="botonera">
+                    <input id="boton-encriptar" type="button" value="Encriptar">
+                    <input id="boton-desencriptar" type="button" value="Desencriptar">
+                </div>
             </div>
-            <div>
-                <textarea></textarea>
-                <img src="./img/dibujo.png" alt="Imagen de persona buscando con lupa.">
-                <p>Ningún mensaje fue encontrado</p>
+            <div class="caja2">
+                <textarea class="salida" placeholder="Salida"></textarea>
+                <input id="boton-copiar" type="button" value="Copiar">
+                <!--
+                <div>
+                    <img src="./img/dibujo.png" alt="Imagen de persona buscando con lupa.">
+                </div> 
+                -->
+                <!--<p>Ningún mensaje fue encontrado</p>
                 <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                -->
             </div>
         </main>
+        <script src="./js/index.js"></script>
     </body>
 </html>
