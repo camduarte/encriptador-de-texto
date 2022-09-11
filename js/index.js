@@ -81,3 +81,32 @@ function copiar() {
     var salida = document.querySelector(".salida");
     navigator.clipboard.writeText(salida.value);
 }
+
+function esMayuscula(letra) {
+    return letra === letra.toUpperCase();
+}
+
+function esMinuscula(letra) {
+    return letra === letra.toLowerCase();
+}
+
+/**
+ * Valida que el texto solo sea letras minusculas.
+ * Valida que no sean letras con tildes.
+ * Valida que no sean caracteres especiales.
+ */
+function validarTexto(evento) {
+    var caracter = evento.key;
+    console.log(evento);
+
+    // Expresion regular
+    let expReg = /[a-z]/;
+
+    let resultado = expReg.test(caracter);
+    if(!resultado) {
+        evento.preventDefault();
+    }
+}
+
+var entrada = document.querySelector(".entrada");
+entrada.onkeydown = validarTexto;

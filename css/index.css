@@ -37,7 +37,8 @@ main {
     border-style: none;
 
     display: block;
-    
+    resize: none;
+
     width: 70%;
     height: 68%;
     left: 240px;
