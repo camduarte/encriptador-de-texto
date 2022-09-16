@@ -7,12 +7,13 @@ function mostrarSalida() {
     const mostrar = "mostrar";
     const ocultar = "ocultar";
 
-    let mensaje = document.getElementById("mensaje");
-    mensaje.className = "ocultar"
-
     let salida = document.getElementById("salida");
-    salida.className = "mostrar";
-
+    // si el espacio de msj encriptado esta oculto lo hago visible.
+    if(salida.className === ocultar) {
+        let mensaje = document.getElementById("mensaje");
+        mensaje.className = "ocultar"
+        salida.className = "mostrar";        
+    }
     //Copiar en el clipboard.
     let botonCopiar = document.getElementById("boton-copiar");
     botonCopiar.onclick = copiar;
@@ -46,12 +47,15 @@ function encriptar() {
         salida.value = resultado;        
     } else {
         // Muestro mensaje al usuario.
+        let mostrar = "mostrar";
+        let ocultar = "ocultar";
         let salida = document.getElementById("salida");
-        if (salida.className === "mostrar") {
-            salida.className = "ocultar";
+        // Si el espacio de msj encriptado es visible, entonces lo oculto.
+        if (salida.className === mostrar) {
+            salida.className = ocultar;
 
             let mensaje = document.getElementById("mensaje");
-            mensaje.className = "mostrar"
+            mensaje.className = mostrar;
         }
         alert("Solo letras minúsculas y sin acentos");   
     }
