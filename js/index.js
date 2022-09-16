@@ -47,11 +47,12 @@ function encriptar() {
     } else {
         // Muestro mensaje al usuario.
         let salida = document.getElementById("salida");
-        salida.className = "ocultar";
+        if (salida.className === "mostrar") {
+            salida.className = "ocultar";
 
-        let mensaje = document.getElementById("mensaje");
-        mensaje.className = "mostrar"
-
+            let mensaje = document.getElementById("mensaje");
+            mensaje.className = "mostrar"
+        }
         alert("Solo letras minúsculas y sin acentos");   
     }
 }
