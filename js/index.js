@@ -17,27 +17,32 @@ function mostrarSalida() {
  * @returns El texto encriptado.
  */ 
 function encriptar() {
-    const texto = document.querySelector(".entrada").value;
+    if (validarMensaje()) {
+        const texto = document.querySelector(".entrada").value;
 
-    //Llaves de encriptación.
-    var llaves = new Map();
-    llaves.set("e","enter");
-    llaves.set("i","imes");
-    llaves.set("a","ai");
-    llaves.set("o","ober");
-    llaves.set("u","ufat");
-
-    //Encripto el mensaje.
-    var resultado = texto.replace(/a/g, llaves.get("a"))
-    resultado = resultado.replace(/e/g, llaves.get("e"))
-    resultado = resultado.replace(/i/g, llaves.get("i"))
-    resultado = resultado.replace(/o/g, llaves.get("o"))
-    resultado = resultado.replace(/u/g, llaves.get("u"));
-
-    //Muestro el mensaje encriptado.
-    mostrarSalida();
-    const salida = document.querySelector(".salida");
-    salida.value = resultado;
+        //Llaves de encriptación.
+        var llaves = new Map();
+        llaves.set("e","enter");
+        llaves.set("i","imes");
+        llaves.set("a","ai");
+        llaves.set("o","ober");
+        llaves.set("u","ufat");
+    
+        //Encripto el mensaje.
+        var resultado = texto.replace(/a/g, llaves.get("a"))
+        resultado = resultado.replace(/e/g, llaves.get("e"))
+        resultado = resultado.replace(/i/g, llaves.get("i"))
+        resultado = resultado.replace(/o/g, llaves.get("o"))
+        resultado = resultado.replace(/u/g, llaves.get("u"));
+    
+        //Muestro el mensaje encriptado.
+        mostrarSalida();
+        const salida = document.querySelector(".salida");
+        salida.value = resultado;        
+    } else {
+        limpiarSalida();
+        alert("Solo letras minúsculas y sin acentos");   
+    }
 }
 
 var  botonEncriptar = document.getElementById("boton-encriptar");
@@ -82,31 +87,28 @@ function copiar() {
     navigator.clipboard.writeText(salida.value);
 }
 
-function esMayuscula(letra) {
-    return letra === letra.toUpperCase();
-}
-
-function esMinuscula(letra) {
-    return letra === letra.toLowerCase();
+/**
+ * Valida que el texto solo sea letras minúsculas.
+ * Valida que no sean letras con tildes.
+ * Valida que no sean caracteres especiales.
+ * 
+ * @return true si son caracteres validos.
+ */
+function validarMensaje() {
+    let mensaje = document.querySelector(".entrada").value;
+    // Busca coincidencia con cualquier caracter que no sea de a-b y espacio.
+    const expReg = /[^a-z\s]/g;
+    let esValido = !expReg.test(mensaje);
+    return esValido;
 }
 
 /**
- * Valida que el texto solo sea letras minusculas.
- * Valida que no sean letras con tildes.
- * Valida que no sean caracteres especiales.
+ *  Limpia la caja de salida.
  */
-function validarTexto(evento) {
-    var caracter = evento.key;
-    console.log(evento);
-
-    // Expresion regular
-    let expReg = /[a-z]/;
-
-    let resultado = expReg.test(caracter);
-    if(!resultado) {
-        evento.preventDefault();
+function limpiarSalida() {
+    let salida = document.querySelector(".salida");
+    // Verifica que exista el elemento.
+    if(salida != null) {
+        salida.value = "";
     }
 }
-
-var entrada = document.querySelector(".entrada");
-entrada.onkeydown = validarTexto;
