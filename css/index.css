@@ -25,13 +25,6 @@ main {
     margin: 0 auto;
 }
 
-.dibujo {
-    display: block;
-    margin: 16px auto 0 auto;
-}
-
-
-
 .entrada {
     background-color: #f3f5fc;
     border-style: none;
@@ -133,11 +126,24 @@ main {
     border-radius: 32px;
 }
 
+.mostrar {
+    display: block;
+}
+
+.ocultar {
+    display: none;
+}
+
+.dibujo {
+    display: block;
+    margin: 16px auto 0 auto;
+}
+
 .msg1 {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 21px;
     line-height: 120%;
 
     text-align: center;
@@ -172,6 +178,11 @@ main {
     line-height: 150%;
 
     color: #495057;
+}
+
+#salida {
+    width: 100%;
+    height: 100%;
 }
 
 #boton-copiar {

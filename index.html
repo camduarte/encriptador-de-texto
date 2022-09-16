@@ -23,9 +23,15 @@
                 </div>
             </div>
             <div class="caja2">
-                <img class="dibujo" src="./img/dibujo.png" alt="Persona buscando."> 
-                <p class="msg1">Ningún mensaje fue encontrado</p>
-                <p class="msg2">Ingresa el texto que desees encriptar o desencriptar.</p>
+                <div id="mensaje" class=".mostrar">
+                    <img class="dibujo" src="./img/dibujo.png" alt="Persona buscando."> 
+                    <p class="msg1">Ningún mensaje fue encontrado</p>
+                    <p class="msg2">Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+                <div id="salida" class="ocultar">
+                    <textarea class="salida" placeholder="Salida" readonly="true" disabled></textarea>
+                    <input id="boton-copiar" type="button" value="Copiar">
+                </div>
             </div>
         </main>
         <script src="./js/index.js"></script>

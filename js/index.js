@@ -4,21 +4,26 @@
  * Muestra la caja para el mensaje encriptado/desencriptado.
  */
 function mostrarSalida() {
-    var caja2 = document.querySelector(".caja2");
-    var contenido = "<textarea class=\"salida\" placeholder=\"Salida\" readonly=\"true\" disabled></textarea><input id=\"boton-copiar\" type=\"button\" value=\"Copiar\">";
-    caja2.innerHTML = contenido;
+    const mostrar = "mostrar";
+    const ocultar = "ocultar";
+
+    let mensaje = document.getElementById("mensaje");
+    mensaje.className = "ocultar"
+
+    let salida = document.getElementById("salida");
+    salida.className = "mostrar";
+
     //Copiar en el clipboard.
-    var botonCopiar = document.getElementById("boton-copiar");
+    let botonCopiar = document.getElementById("boton-copiar");
     botonCopiar.onclick = copiar;
 }
 
 /**
  * Encripta el texto.
- * @returns El texto encriptado.
  */ 
 function encriptar() {
     if (validarMensaje()) {
-        const texto = document.querySelector(".entrada").value;
+        let texto = document.querySelector(".entrada").value;
 
         //Llaves de encriptación.
         var llaves = new Map();
@@ -29,7 +34,7 @@ function encriptar() {
         llaves.set("u","ufat");
     
         //Encripto el mensaje.
-        var resultado = texto.replace(/a/g, llaves.get("a"))
+        let resultado = texto.replace(/a/g, llaves.get("a"))
         resultado = resultado.replace(/e/g, llaves.get("e"))
         resultado = resultado.replace(/i/g, llaves.get("i"))
         resultado = resultado.replace(/o/g, llaves.get("o"))
@@ -37,26 +42,28 @@ function encriptar() {
     
         //Muestro el mensaje encriptado.
         mostrarSalida();
-        const salida = document.querySelector(".salida");
+        let salida = document.querySelector(".salida");
         salida.value = resultado;        
     } else {
-        limpiarSalida();
+        // Muestro mensaje al usuario.
+        let salida = document.getElementById("salida");
+        salida.className = "ocultar";
+
+        let mensaje = document.getElementById("mensaje");
+        mensaje.className = "mostrar"
+
         alert("Solo letras minúsculas y sin acentos");   
     }
 }
 
-var  botonEncriptar = document.getElementById("boton-encriptar");
-botonEncriptar.onclick = encriptar;
-
 /**
  * Desencripta el texto.
- * @returns El texto desencriptado.
  */
  function desencriptar() {
     const texto = document.querySelector(".entrada").value;
     
     //Llaves de desencriptación.
-    var llaves = new Map();
+    let llaves = new Map();
     llaves.set("enter","e");
     llaves.set("imes","i");
     llaves.set("ai","a");
@@ -64,7 +71,7 @@ botonEncriptar.onclick = encriptar;
     llaves.set("ufat","u");
 
     //Desencripto el mensaje.
-    var resultado = texto.replace(/enter/g, llaves.get("enter"))
+    let resultado = texto.replace(/enter/g, llaves.get("enter"))
     resultado = resultado.replace(/imes/g, llaves.get("imes"))
     resultado = resultado.replace(/ai/g, llaves.get("ai"))
     resultado = resultado.replace(/ober/g, llaves.get("ober"))
@@ -76,14 +83,11 @@ botonEncriptar.onclick = encriptar;
     salida.value = resultado;
 }
 
-var  botonDesencriptar = document.getElementById("boton-desencriptar");
-botonDesencriptar.onclick = desencriptar;
-
 /**
  * Copia el texto encriptado/desencriptado en el clipboard.
  */
 function copiar() {
-    var salida = document.querySelector(".salida");
+    let salida = document.querySelector(".salida");
     navigator.clipboard.writeText(salida.value);
 }
 
@@ -102,13 +106,8 @@ function validarMensaje() {
     return esValido;
 }
 
-/**
- *  Limpia la caja de salida.
- */
-function limpiarSalida() {
-    let salida = document.querySelector(".salida");
-    // Verifica que exista el elemento.
-    if(salida != null) {
-        salida.value = "";
-    }
-}
+var  botonEncriptar = document.getElementById("boton-encriptar");
+botonEncriptar.onclick = encriptar;
+
+var  botonDesencriptar = document.getElementById("boton-desencriptar");
+botonDesencriptar.onclick = desencriptar;
