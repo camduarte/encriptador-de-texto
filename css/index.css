@@ -1,7 +1,8 @@
 body {
     /* background-color: #f3f5fc; */
     background-color: #fdeafd;
-    font-family: 'Inter', sans-serif;   
+    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .caja-logo {
@@ -28,7 +29,8 @@ main {
 
 .entrada {
     background-color: #fdeafd;
-    border-style: none;
+    border: none;
+    outline: none;
 
     display: block;
     resize: none;
@@ -43,7 +45,8 @@ main {
     font-weight: 400;
     font-size: 32px;
     line-height: 150%;
-    color: #0A3871;
+    /* color: #0A3871; */
+    color: #8d0d90;
 }
 
 .caja-mensaje {
