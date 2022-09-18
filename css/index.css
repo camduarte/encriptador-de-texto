@@ -1,5 +1,6 @@
 body {
-    background-color: #f3f5fc;
+    /* background-color: #f3f5fc; */
+    background-color: #fdeafd;
     font-family: 'Inter', sans-serif;   
 }
 
@@ -26,7 +27,7 @@ main {
 }
 
 .entrada {
-    background-color: #f3f5fc;
+    background-color: #fdeafd;
     border-style: none;
 
     display: block;
@@ -75,7 +76,8 @@ main {
 }
 
 #boton-encriptar {
-    background: #0A3871;
+    /* background-color: #0A3871; */
+    background-color: #8d0d90;
     border-radius: 24px;
 
     padding: 24px;
@@ -100,7 +102,8 @@ main {
     width: 35%;
     height: 67px;
 
-    border: 1px solid #0A3871;
+    /* border: 1px solid #0A3871; */
+    border: 1px solid #8d0d90;
     border-radius: 24px;
 
     font-family: 'Inter';
@@ -110,7 +113,8 @@ main {
     line-height: 19px;
     text-align: center;
 
-    color: #0A3871;
+    /* color: #0A3871; */
+    color: #8d0d90  ;
 }
 
 
@@ -196,7 +200,8 @@ main {
 
     margin: 0 auto 16px auto;
 
-    border: 1px solid #0A3871;
+    /* border: 1px solid #0A3871; */
+    border: 1px solid #8d0d90;
     border-radius: 24px;
 
     font-family: 'Inter';
@@ -206,5 +211,6 @@ main {
     line-height: 19px;
     text-align: center;
     
-    color: #0A3871;
+    /* color: #0A3871; */
+    color: #8d0d90;
 }
