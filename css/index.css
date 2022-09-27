@@ -210,3 +210,27 @@ main {
     
     color: #8d0d90;
 }
+
+/* Responsive */
+@media only screen and (max-width: 400px) {
+    .caja-logo, main, .caja1, .caja2 {
+        width: auto;
+    }
+ 
+    .caja1, .caja2 {
+        float: none;
+    }
+ 
+    .caja1, .caja2, .caja-logo {
+        margin: 1em;
+    }
+    
+    .entrada {
+        width: 100%;
+    }
+
+    #boton-encriptar, #boton-desencriptar {
+        width: 49%;
+    }
+
+}
