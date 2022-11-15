@@ -10,7 +10,9 @@ body {
 }
 
 .logo {
+    height: 51px;
     margin: 16px 0;
+    width: 150px;
 }
 
 main {
@@ -27,7 +29,7 @@ main {
 }
 
 .entrada {
-    background-color: #fdeafd;
+    background-color: transparent;
     border: none;
     outline: none;
 
@@ -56,6 +58,7 @@ main {
     height: 16px;
 }
 
+<!-- FIXME: Corregir el centrado vertical del mensaje -->
 .mensaje {
     display: inline;
     position: relative;
