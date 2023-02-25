@@ -58,7 +58,6 @@ main {
     height: 16px;
 }
 
-<!-- FIXME: Corregir el centrado vertical del mensaje -->
 .mensaje {
     display: inline;
     position: relative;
