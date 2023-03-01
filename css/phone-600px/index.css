@@ -1,0 +1,61 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .container {
+        grid-template-areas: "header"
+                             "input"
+                             "controls"
+                             "output"
+                             "footer";
+    
+        grid-template-columns: auto;
+        grid-template-rows:repeat(5, auto);
+        height: auto;
+        width: 100vw;
+        padding: 1rem;
+    }
+
+    .header {
+        box-sizing: border-box;
+        margin-bottom: 1rem;
+    }
+
+    .input__container {
+        height: 27.5rem;
+        width: 100%;
+    }
+
+    .input__msg {
+        font-size: 1.188rem;
+    }
+
+    .input__info {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .controls {
+        flex-direction: column;
+        height: 9.875rem;
+    }
+
+    .controls__encrypt, .controls__decrypt {
+        width: 100%;
+    }
+
+    .output {
+        height: 27.5rem;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    .output__msg {
+        font-size: 1.188rem;
+    }
+
+    .footer {
+        flex-direction: column;
+        height: 6.25rem;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+}
