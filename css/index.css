@@ -1,238 +1,145 @@
-body {
-    background-color: #fdeafd;
-    font-family: 'Inter', sans-serif;
-    font-family: 'Inter', sans-serif;
+:root {
+    --black: #010101;
+    --dark-purple: #210B2C;
+    --eminence: #55286F;
+    --gray-400: #495057;
+    --thistle: #CFB3CD;
+    --white: #FEFEFE;
+
+    --font-family-inter: 'Inter', sans-serif;
+
+    background-color: var(--dark-purple);
+    font-family: var(--font-family-inter);
 }
 
-.caja-logo {
-    width: 940px;
-    margin: 0 auto;
+.container {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas: "header   output"
+                         "input output"
+                         "controls output"
+                         "footer   footer";
+
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: .5fr 3fr .5fr .75fr;
+    height: 100vh;
+    width: 100vw;
+    padding: 2rem 2rem 0;
 }
 
-.logo {
-    height: 51px;
-    margin: 16px 0;
-    width: 150px;
-}
-
-main {
-    width: 940px;
-    margin: 0 auto;
-}
-
-.caja1 {
-
-    float: left;
-    width: 60%;
-    height: 472px;
-    margin: 0 auto;
-}
-
-.entrada {
+.header {
+    display: flex;
+    align-items: center;
     background-color: transparent;
+    grid-area: header;
+}
+
+.header__logo {
+    width: 90px;
+}
+
+.input {
+    background-color: transparent;
+    grid-area: input;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.input__container {
+    height: 100%;
+    width: 75%;
+}
+
+.input__msg {
+    height: 90%;
+    width: 100%;
+
+    resize: none;
     border: none;
     outline: none;
 
-    display: block;
-    resize: none;
-
-    width: 70%;
-    height: 68%;
-    left: 240px;
-    top: 168px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 150%;
-    color: #8d0d90;
+    font-size: 2rem;
+    color: var(--white);
+    background-color: transparent;
 }
 
-.caja-mensaje {
-    margin-top: 16px;
+.input__info {
+    height: 10%;
+    color: var(--white);
+    font-size: 0.75rem;
 }
 
-.signo-exclamacion {
-    width: 16px;
-    height: 16px;
+.controls {
+    background-color: transparent;
+    display: flex;
+    grid-area: controls;
+    justify-content: space-evenly;
 }
 
-.mensaje {
-    display: inline;
-    position: relative;
-    bottom: 3px;
-    margin-left: 5px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 150%;
-
-    color: #495057;
-    opacity: 0.8;
-}
-
-.botonera {
-    margin-top: 16px;
-}
-
-#boton-encriptar {
-    background-color: #8d0d90;
-    border-radius: 24px;
-
-    padding: 24px;
+.controls__encrypt, .controls__decrypt {
+    font-size: 1rem;
+    height: 3rem;
     width: 35%;
-    height: 67px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-
-    color: #FFFFFF;
 }
 
-#boton-desencriptar {
-    box-sizing: border-box;
-
-    padding: 24px;
-
-    width: 35%;
-    height: 67px;
-
-    border: 1px solid #8d0d90;
-    border-radius: 24px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-
-    color: #8d0d90  ;
-}
-
-
-.caja2 {
-    float: right;
-
-    width: 40%;
-    height: 472px;
- 
-    background: #FFFFFF;
-
-    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+.output {
+    background-color: var(--white);
+    grid-area: output;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border-radius: 32px;
+    padding: 1rem;
 }
 
-.mostrar {
-    display: block;
-}
-
-.ocultar {
-    display: none;
-}
-
-.dibujo {
-    display: block;
-    margin: 16px auto 0 auto;
-}
-
-.msg1 {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 21px;
-    line-height: 120%;
-
-    text-align: center;
-    color: #343A40;
-}
-
-.msg2 {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-
-    text-align: center;
-    color: #495057;
-}
-
-.salida {
-    background-color: #FFFFFF;
-    border-style: none;
-
-    display: block;
-    width: 70%;
-    height: 75%;
-    padding: 0.5em;
-    margin: 0 auto;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 150%;
-
-    color: #495057;
-}
-
-#salida {
+.output__msg {
+    background-color: transparent;
+    border: none;
+    color: var(--gray-400);
+    font-size: 1.5rem;
+    height: 85%;
+    outline: none;
+    resize: none;
     width: 100%;
-    height: 100%;
 }
 
-#boton-copiar {
+.output__copy {
+    font-size: 1rem;
+    height: 3rem;
+    width: 60%;
+}
+
+.footer {
+    align-items: center;
+    background-color: transparent;
+    color: var(--white);
+    display: flex;
+    font-size: 1rem;
+    grid-area: footer;
+    justify-content: center;
+}
+
+.footer__link {
+    color: var(--white);
+    font-size: 2rem;
+}
+
+.white-background {
+    background-color: var(--white);
+}
+
+.img-background {
+    background-image: url(../img/encryption-keys-lock-digital-concept.jpg);
+}
+
+.show {
     display: block;
-
-    box-sizing: border-box;
-
-    padding: 24px;
-    width: 80%;
-    height: 67px;
-
-    margin: 0 auto 16px auto;
-
-    border: 1px solid #8d0d90;
-    border-radius: 24px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    
-    color: #8d0d90;
 }
 
-/* Responsive */
-@media only screen and (max-width: 400px) {
-    .caja-logo, main, .caja1, .caja2 {
-        width: auto;
-    }
- 
-    .caja1, .caja2 {
-        float: none;
-    }
- 
-    .caja1, .caja2, .caja-logo {
-        margin: 1em;
-    }
-    
-    .entrada {
-        width: 100%;
-    }
-
-    #boton-encriptar, #boton-desencriptar {
-        width: 49%;
-    }
-
+.hide {
+    display: none;
 }

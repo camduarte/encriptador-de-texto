@@ -3,39 +3,36 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Encriptador de texto</title>
+        <title>Encriptador de texto | camd</title>
+        <meta name="description" content="Encriptador/desencriptador de texto online.">
         <link rel="icon" type="image/x-icon" href="./img/favicon.ico" sizes="16x16"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./css/reset.css">
         <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/button.css">
+        <script src="https://kit.fontawesome.com/070f11682f.js" crossorigin="anonymous"></script>
     </head>
-    <body>
-        <header>
-            <div class="caja-logo"><h1><img class="logo" src="./img/camd-logo.svg" alt="Logo camd."></h1></div>
+    <body class="container">
+        <header class="header">
+            <img class="header__logo" src="./img/camd-low-resolution-logo-white-on-transparent-background.png" alt="Logo camd.">
         </header>
-        <main>
-            <div class="caja1">
-                <textarea class="entrada" placeholder="Ingrese el texto aqui"></textarea>
-                <div class="caja-mensaje"><img class="signo-exclamacion" src="./img/signo.png"><p class="mensaje">Solo letras minúsculas y sin acentos</p></div>
-                <div class="botonera">
-                    <input id="boton-encriptar" type="button" value="Encriptar">
-                    <input id="boton-desencriptar" type="button" value="Desencriptar">
-                </div>
+        <div class="input">
+            <div class="input__container">
+                <textarea  class="input__msg" placeholder="Ingrese el texto aquí" maxlength="250"></textarea>
+                <p class="input__info"><i class="fa-solid fa-circle-exclamation"></i> Solo letras minúsculas y sin acentos</p>
             </div>
-            <div class="caja2">
-                <div id="mensaje" class=".mostrar">
-                    <img class="dibujo" src="./img/dibujo-violeta.png" alt="Persona buscando."> 
-                    <p class="msg1">Ningún mensaje fue encontrado</p>
-                    <p class="msg2">Ingresa el texto que desees encriptar o desencriptar.</p>
-                </div>
-                <div id="salida" class="ocultar">
-                    <textarea class="salida" placeholder="Salida" readonly="true" disabled></textarea>
-                    <input id="boton-copiar" type="button" value="Copiar">
-                </div>
-            </div>
-        </main>
-        <script type="text/javascript" src="./js/index.js"></script>
+        </div>
+        <div class="controls">
+            <button class="controls__encrypt btn-colored">Encriptar</button>
+            <button class="controls__decrypt btn-transparent-border-light">Desencriptar</button>
+        </div>
+        <div class="output img-background">
+            <textarea class="output__msg"></textarea>
+            <button class="output__copy btn-transparent-border-dark hide">Copiar</button>
+        </div>
+        <footer class="footer"><pre>Desarrollado por Christian Ariel Modesto Duarte 2022  <a  class="footer__link" href="https://github.com/camduarte/encriptador-de-texto" target="_blank"><i class="fa-brands fa-github"></i></a>   <a  class="footer__link" href="https://www.linkedin.com/in/christian-ariel-modesto-duarte" target="_blank"><i class="fa-brands fa-linkedin"></i></a></pre></footer>
+        <script src="./js/index.js"></script>
     </body>
 </html>

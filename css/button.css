@@ -1,0 +1,20 @@
+.btn-transparent-border-dark {
+    background-color: transparent;
+    border: 1px solid var(--dark-purple);
+    border-radius: 24px;
+    color: var(--dark-purple);
+}
+
+.btn-transparent-border-light {
+    background-color: transparent;
+    border: 1px solid var(--thistle);
+    border-radius: 24px;
+    color: var(--thistle);
+}
+
+.btn-colored {
+    background-color: var(--eminence);
+    border: none;
+    border-radius: 24px;
+    color: var(--white);
+}
