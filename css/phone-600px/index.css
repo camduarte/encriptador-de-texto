@@ -39,6 +39,7 @@
     }
 
     .controls__encrypt, .controls__decrypt {
+        height: 4.188rem;
         width: 100%;
     }
 
